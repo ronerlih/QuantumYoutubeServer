@@ -1,0 +1,33 @@
+I would like to connect with
+A standalone SSH client
+A Java SSH Client directly from my browser (Java required)
+To access your instance:
+Open an SSH client. (find out how to connect using PuTTY)
+Locate your private key file (ron.pem). The wizard automatically detects the key you used to launch the instance.
+Your key must not be publicly viewable for SSH to work. Use this command if needed:
+chmod 400 ron.pem
+Connect to your instance using its Public DNS:
+ec2-54-183-134-65.us-west-1.compute.amazonaws.com
+Example:
+ssh -i "ron.pem" ec2-user@ec2-54-183-134-65.us-west-1.compute.amazonaws.com
+Please note that in most cases the username above will be correct, however please ensure that you read your AMI usage instructions to ensure that the AMI owner has not changed the default AMI username.
+If you need any assistance connecting to your instance, please see our connection documentation.
+
+SSH connect:
+
+SCP (app.js):
+scp -i /Users/ron/Desktop/Quantum/ron.pem -r /Users/ron/Desktop/Quantum/youtube-server/app.js ec2-54-183-134-65.us-west-1.compute.amazonaws.com:~/youtube-server/
+
+SCP (out2.log):
+scp -i /Users/ron/Desktop/Quantum/ron.pem -r ec2-54-183-134-65.us-west-1.compute.amazonaws.com:~/youtube-server/out2.log /Users/ron/Desktop/Quantum/
+
+
+
+
+
+
+
+
+
+
+
